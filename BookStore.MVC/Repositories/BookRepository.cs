@@ -6,9 +6,9 @@ namespace BookStore.MVC.Repositories;
 
 public class BookRepository : IBookRepository
 {
-    private readonly BookStoreContext _bookStoreContext;
+    private readonly IBookStoreContext _bookStoreContext;
     
-    public BookRepository(BookStoreContext bookStoreContext)
+    public BookRepository(IBookStoreContext bookStoreContext)
     {
         _bookStoreContext = bookStoreContext;
     }

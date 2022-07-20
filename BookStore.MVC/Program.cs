@@ -1,12 +1,14 @@
 ﻿using BookStore.MVC;
 using BookStore.MVC.Database;
 using BookStore.MVC.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSqlite<BookStoreContext>("Data Source=BookStore.db");
+builder.Services.AddDbContext<IBookStoreContext, BookStoreContext>(optionsAction =>
+    optionsAction.UseSqlite("Data Source=BookStore.db"));
 
 builder.Services.AddTransient<IBookRepository, BookRepository>();
 
@@ -21,6 +23,6 @@ app.UseRouting();
 
 app.MapDefaultControllerRoute();
 
-app.CreateDbIfItNotExist();
+await app.CreateDbIfItNotExistAsync();
 
 app.Run();

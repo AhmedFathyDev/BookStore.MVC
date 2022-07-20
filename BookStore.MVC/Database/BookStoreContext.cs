@@ -3,10 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.MVC.Database;
 
-public class BookStoreContext : DbContext
+public class BookStoreContext : DbContext, IBookStoreContext
 {
-    public BookStoreContext(DbContextOptions<BookStoreContext> options)
-        : base(options)
+    public BookStoreContext(DbContextOptions<BookStoreContext> options) : base(options)
     {
     }
 

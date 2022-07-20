@@ -13,15 +13,21 @@ public class BookController : Controller
     }
     
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> GetAll()
     {
         return Ok(await _bookRepository.GetAllAsync());
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index(int id)
+    public async Task<IActionResult> Get(int id)
     {
         var book = await _bookRepository.GetByIdAsync(id);
         return book is null ? NotFound() : Ok(book);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Search(string title, string author)
+    {
+        return Ok(await _bookRepository.SearchAsync(title, author));
     }
 }
