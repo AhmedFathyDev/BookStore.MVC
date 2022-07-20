@@ -1,3 +1,5 @@
-BookStore.MVC/bin/
-BookStore.MVC/obj/
-.idea/
+/.idea
+/BookStore.MVC/bin
+/BookStore.MVC/obj
+/BookStore.MVC/Migrations
+/BookStore.MVC/BookStore.db
