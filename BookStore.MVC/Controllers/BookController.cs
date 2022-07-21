@@ -13,9 +13,9 @@ public class BookController : Controller
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<ViewResult> GetAll()
     {
-        return Ok(await _bookRepository.GetAllAsync());
+        return View(await _bookRepository.GetAllAsync());
     }
 
     [HttpGet]

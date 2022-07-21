@@ -5,8 +5,14 @@ namespace BookStore.MVC.Controllers;
 public class HomeController : Controller
 {
     [HttpGet]
-    public string Index()
+    public ViewResult Index()
     {
-        return "Hello, World!";
+        return View();
+    }
+    
+    [HttpGet]
+    public ViewResult AboutUs()
+    {
+        return View();
     }
 }
