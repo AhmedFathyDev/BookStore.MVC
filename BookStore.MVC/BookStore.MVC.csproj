@@ -18,4 +18,8 @@
     <Folder Include="Views\Shared" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="TempViews\Fathy.cshtml" />
+  </ItemGroup>
+
 </Project>
