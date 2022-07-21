@@ -8,5 +8,6 @@ public interface IBookStoreContext
 {
     DbSet<BookModel> Books { get; }
     DatabaseFacade Database { get; }
+    int SaveChanges();
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

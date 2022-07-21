@@ -3,3 +3,5 @@
 /BookStore.MVC/obj
 /BookStore.MVC/Migrations
 /BookStore.MVC/BookStore.db
+/BookStore.MVC/BookStore.db-shm
+/BookStore.MVC/BookStore.db-wal

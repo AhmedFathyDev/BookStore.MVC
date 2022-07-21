@@ -23,6 +23,6 @@ app.UseRouting();
 
 app.MapDefaultControllerRoute();
 
-await app.CreateDbIfItNotExistAsync();
+app.CreateDbIfItNotExist();
 
 app.Run();

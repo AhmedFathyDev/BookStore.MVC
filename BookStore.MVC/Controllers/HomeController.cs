@@ -15,4 +15,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    
+    [HttpGet]
+    public ViewResult ContactUs()
+    {
+        return View();
+    }
 }

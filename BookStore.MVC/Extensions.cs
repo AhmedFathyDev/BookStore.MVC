@@ -5,16 +5,16 @@ namespace BookStore.MVC;
 
 public static class Extensions
 {
-    public static async Task CreateDbIfItNotExistAsync(this IHost host)
+    public static void CreateDbIfItNotExist(this IHost host)
     {
         using var scope = host.Services.CreateScope();
         var services = scope.ServiceProvider;
         var context = services.GetRequiredService<IBookStoreContext>();
-        await context.Database.EnsureCreatedAsync();
-        await context.InitializeAsync();
+        context.Database.EnsureCreated();
+        context.Initialize();
     }
 
-    private static async Task InitializeAsync(this IBookStoreContext context)
+    private static void Initialize(this IBookStoreContext context)
     {
         if (context.Books.Any())
         {
@@ -45,7 +45,7 @@ public static class Extensions
             }
         };
 
-        await context.Books.AddRangeAsync(books);
-        await context.SaveChangesAsync();
+        context.Books.AddRange(books);
+        context.SaveChanges();
     }
 }
