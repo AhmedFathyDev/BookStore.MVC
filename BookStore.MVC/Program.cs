@@ -19,8 +19,9 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.UseRouting();
+app.UseStaticFiles();
 
+app.UseRouting();
 app.MapDefaultControllerRoute();
 
 app.CreateDbIfItNotExist();
