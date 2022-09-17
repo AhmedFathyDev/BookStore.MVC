@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+#if DEBUG
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
+
 builder.Services.AddDbContext<IBookStoreContext, BookStoreContext>(optionsAction =>
     optionsAction.UseSqlite("Data Source=BookStore.db"));
 
