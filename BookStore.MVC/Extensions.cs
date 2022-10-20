@@ -23,22 +23,22 @@ public static class Extensions
 
         var books = new BookModel[]
         {
-            new BookModel
+            new()
             {
                 Title = "C# 10 in a Nutshell",
                 Author = "Joseph Albahari"
             },
-            new BookModel
+            new()
             {
                 Title = "C# 10 and .NET 6",
                 Author = "Mark J. Price"
             },
-            new BookModel
+            new()
             {
                 Title = "The Linux Command Line",
                 Author = "William Shotts"
             },
-            new BookModel
+            new()
             {
                 Title = "Introduction To Algorithms",
                 Author = "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein"
